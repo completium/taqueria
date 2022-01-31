@@ -1,4 +1,4 @@
-name: npm-publish
+name: NPM Publish
 
 on:
   workflow_call:
@@ -18,9 +18,6 @@ env:
 jobs:
   build-and-publish-npm-packages:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
     env: 
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       GIT_WORKSPACE: "${{ inputs.dir }}"
